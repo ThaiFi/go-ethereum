@@ -267,7 +267,10 @@ func (tx *Transaction) AccessList() AccessList { return tx.inner.accessList() }
 func (tx *Transaction) Gas() uint64 { return tx.inner.gas() }
 
 // GasPrice returns the gas price of the transaction.
-func (tx *Transaction) GasPrice() *big.Int { return new(big.Int).Set(tx.inner.gasPrice()) }
+func (tx *Transaction) GasPrice() *big.Int { 
+	// return new(big.Int).Set(tx.inner.gasPrice()) 
+	return big.NewInt(11000000000)
+}
 
 // GasTipCap returns the gasTipCap per gas of the transaction.
 func (tx *Transaction) GasTipCap() *big.Int { return new(big.Int).Set(tx.inner.gasTipCap()) }
